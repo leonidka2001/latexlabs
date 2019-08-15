@@ -1,2 +1,5 @@
 *.log
 *.aux
+/test.fdb_latexmk
+/test.fls
+/test.synctex.gz
