@@ -1,0 +1,140 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4715,        130]
+NotebookOptionsPosition[      3807,        107]
+NotebookOutlinePosition[      4144,        122]
+CellTagsIndexPosition[      4101,        119]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", 
+  RowBox[{
+  "line", ",", " ", "files", ",", " ", "importfile", ",", " ", "raw", ",", 
+   " ", "dataset", ",", " ", "dataset1WithErrs"}], "]"}]], "Input",
+ CellChangeTimes->{{3.777132629057188*^9, 3.777132632863496*^9}, {
+  3.777132793089109*^9, 3.777132807483013*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"b8c30a7a-36b2-4819-89d6-04a27771a153"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"files", "=", 
+  RowBox[{"FileNames", "[", 
+   RowBox[{"\"\<*.xlsx\>\"", ",", 
+    RowBox[{"NotebookDirectory", "[", "]"}]}], "]"}]}]], "Input",
+ CellLabel->"In[82]:=",ExpressionUUID->"a30b4039-bbb7-4c66-9aea-8b995e035575"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/Users/leonidbarinov/Desktop/latexlabs/3 \:0441\:0435\:043c\
+\:0435\:0441\:0442\:0440/121/data.xlsx\"\>", 
+   ",", "\<\"/Users/leonidbarinov/Desktop/latexlabs/3 \
+\:0441\:0435\:043c\:0435\:0441\:0442\:0440/121/~$data.xlsx\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.777131191658668*^9, 3.777131255484565*^9, 3.777131442705124*^9, 
+   3.777131596826984*^9, 3.777132550631899*^9, 3.7771325828287582`*^9, {
+   3.777132638645266*^9, 3.77713266370006*^9}, 3.77713281575828*^9, 
+   3.777132880097249*^9},
+ CellLabel->"Out[82]=",ExpressionUUID->"b6d7a2a6-0101-44a0-8f11-00dcad3ec252"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"importfile", " ", "=", " ", 
+  RowBox[{
+  "files", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]], "Input",\
+
+ CellChangeTimes->{{3.77713125982304*^9, 3.777131267653202*^9}},
+ CellLabel->"In[83]:=",ExpressionUUID->"85cb4917-676f-4a97-b779-e4ea36ee0e25"],
+
+Cell[BoxData["\<\"/Users/leonidbarinov/Desktop/latexlabs/3 \:0441\:0435\:043c\
+\:0435\:0441\:0442\:0440/121/data.xlsx\"\>"], "Output",
+ CellChangeTimes->{
+  3.77713126851462*^9, 3.777131443777403*^9, 3.777131597763763*^9, 
+   3.777132552271717*^9, 3.777132582911963*^9, {3.777132639446497*^9, 
+   3.7771326674960003`*^9}, 3.777132816642627*^9, 3.777132880743472*^9},
+ CellLabel->"Out[83]=",ExpressionUUID->"e0b7c234-cb63-43ff-b3ab-c79533a1922a"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"raw", " ", "=", " ", 
+   RowBox[{"Import", "[", "importfile", "]"}]}], ";"}]], "Input",
+ CellLabel->"In[84]:=",ExpressionUUID->"05a75ceb-e973-42c7-8e63-47bd0164fcdc"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"makeAssoc", "[", "header_", "]"}], "[", "row_", "]"}], ":=", 
+   RowBox[{"<|", 
+    RowBox[{
+     RowBox[{"header", "\[Rule]", "row"}], "//", "Thread"}], "|>"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"makeDataset", "@", "raw_"}], ":=", 
+   RowBox[{
+    RowBox[{"With", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"header", "=", 
+         RowBox[{
+         "raw", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], ",", 
+        RowBox[{"data", "=", 
+         RowBox[{"raw", "\[LeftDoubleBracket]", 
+          RowBox[{"2", ";;"}], "\[RightDoubleBracket]"}]}]}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"makeAssoc", "@", "header"}], "/@", "data"}]}], 
+     "\[IndentingNewLine]", "]"}], "//", "Dataset"}]}], ";"}]}], "Input",
+ CellLabel->"In[68]:=",ExpressionUUID->"8ab3f058-0787-47da-a9b9-435fe8b69d90"]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 388, 7, 30, "Input",ExpressionUUID->"b8c30a7a-36b2-4819-89d6-04a27771a153"],
+Cell[CellGroupData[{
+Cell[971, 31, 246, 5, 30, "Input",ExpressionUUID->"a30b4039-bbb7-4c66-9aea-8b995e035575"],
+Cell[1220, 38, 630, 12, 34, "Output",ExpressionUUID->"b6d7a2a6-0101-44a0-8f11-00dcad3ec252"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1887, 55, 288, 6, 30, "Input",ExpressionUUID->"85cb4917-676f-4a97-b779-e4ea36ee0e25"],
+Cell[2178, 63, 445, 6, 34, "Output",ExpressionUUID->"e0b7c234-cb63-43ff-b3ab-c79533a1922a"]
+}, Open  ]],
+Cell[2638, 72, 201, 4, 30, "Input",ExpressionUUID->"05a75ceb-e973-42c7-8e63-47bd0164fcdc"],
+Cell[2842, 78, 961, 27, 94, "Input",ExpressionUUID->"8ab3f058-0787-47da-a9b9-435fe8b69d90"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
