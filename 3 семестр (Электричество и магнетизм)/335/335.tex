@@ -262,7 +262,7 @@ $B, \ \text{мТл} $ & 20 & 133  & 414  & 660  & 862
        & 978  & 1012 & 1080 \\ \hline
 \end{tabular}
 \caption{Зависимость индукции магнитного
-поля $B$ от точка через магнит
+поля $B$ от тока через магнит
 $I_\text{М}$}
 \end{table}
 
@@ -271,21 +271,36 @@ $I_\text{М}$}
 
 
 \begin{figure}[H]
-    \includegraphics[width=\linewidth]{3} 
+    \includegraphics[width=0.9\linewidth]{3} 
     \captionsetup{justification=centering}
     \caption{График зависимости индукции магнитного
-поля $B$ от точка через магнит
+поля $B$ от тока через магнит
 $I_\text{М}$}
 \end{figure}
+Рассчитаем ЭДС Холла и построим
+семейство характеристик $\mathscr{E} =
+f(B)$ при разных значениях тока  $I$
+через образец из меди.
 
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c||c|c|c||c|c|c|}
+%\begin{table}[H]
+%\centering
+\begin{longtable}{|c|c|c||c|c|c||c|c|c|}
 \hline
 $I, \ \text{А}$ & $B, \ \text{мТл}$
 & $\mathscr{E}, \ \text{мкВ}$    & $I, \ \text{А}$
 & $B, \ \text{мТл}$          & $\mathscr{E}, \ \text{мкВ}$    & $I, \ \text{А}$
 & $B, \ \text{мТл}$          & $\mathscr{E}, \ \text{мкВ}$    \\ \hline
+\endfirsthead
+\hline
+$I, \ \text{А}$ & $B, \ \text{мТл}$
+& $\mathscr{E}, \ \text{мкВ}$    & $I, \ \text{А}$
+& $B, \ \text{мТл}$          & $\mathscr{E}, \ \text{мкВ}$    & $I, \ \text{А}$
+& $B, \ \text{мТл}$          & $\mathscr{E}, \ \text{мкВ}$    \\ \hline
+	\endhead
+	\hline
+	\endfoot
+	\endlastfoot
+
 \multirow{5}{*}{0,2}   & 436,31  & 0,03 & \multirow{12}{*}{0,8} & 178,87  & 0,06 & \multirow{12}{*}{1,01} & 178,87  & 0,09 \\ \cline{2-3} \cline{5-6} \cline{8-9} 
                        & 569,47  & 0,06 &                       & 267,64  & 0,12 &                        & 267,64  & 0,18 \\ \cline{2-3} \cline{5-6} \cline{8-9} 
                        & 640,49  & 0,09 &                       & 356,42  & 0,18 &                        & 356,42  & 0,27 \\ \cline{2-3} \cline{5-6} \cline{8-9} 
@@ -312,7 +327,155 @@ $I, \ \text{А}$ & $B, \ \text{мТл}$
 \multicolumn{3}{c|}{}                  &
 & 1190,87 & 0,75 &
 & 1190,87 & 0,87 \\ \cline{4-9}
-\end{tabular}
+\captionsetup{justification=centering}
+\caption{Зависимость тока $I$ через
+образец от магнитной индукции $B$
+магнитного поля, в котором находится
+образец }
+\end{longtable}
+%\end{table}
+
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{4} 
+    \captionsetup{justification=centering}
+    \caption{Семейство характеристик $\mathscr{E} =
+    f(B)$ при разных значениях тока  $I$
+через образец }
+\end{figure}
+
+Определим угловые коэффициенты $k(I) =
+\Delta \mathscr{E}/ \Delta B$ полученных
+прямых. Построим график $k = f(I)$
+
+\begin{figure}[H]
+    \includegraphics[width=0.85\linewidth]{5} 
+    \captionsetup{justification=centering}
+    \caption{График зависимости углового
+    коэффициента $k = \Delta
+\mathscr{E}/ \Delta B$ от тока через
+образец $I$}
+\end{figure}
+
+Вычислим постоянную Холла по углу
+наклона графика на рис. 5. $R_x = -a\cdot t$,
+где $t$ -- тангенс угла наклона графика
+$k = f(I)$; $a$ = толщина образца из
+меди. ($a = 0,05 \ \text{мм}$)
+\[
+    R_x^\text{медь} = -(0,42\pm 0,08)
+    \cdot 10^{-10}\ \text{м}^3/\text{Кл} 
+\]
+
+Повторим измерения для образца из цинка.
+Построим график зависимости
+$\mathscr{E}_x = f(B)$ и по наклону
+прямой рассчитаем постоянную Холла $R_x
+= -\mathscr{E}_x a/(B I)$ ($a = 0,12\
+\text{мм}$, $I = 1\ \text{А}$)
+
+\begin{figure}[H]
+    \includegraphics[width=0.85\linewidth]{6} 
+    \captionsetup{justification=centering}
+    \caption{График зависимости ЭДС
+    Холла  $\mathscr{E}$ от магнитной
+индукции  $B$ для образца из цинка}
+\end{figure}
+
+
+\[
+    R_x^{\text{цинк}} = (1,07 \pm 0,06)
+    \cdot 10^{-10} \ \text{м}^3/\text{Кл}
+\]
+
+Для определение удельной проводимости
+определим значение $U_{34}$ при токе $I
+~=~1~\ \text{А}$ 
+
+\begin{equation*}
+    \begin{aligned}
+        U_{34}^\text{медь} = 240\pm 15 \
+        \text{мкВ}\\
+        U_{34}^\text{цинк} = 300\pm 15\
+        \text{мкВ}
+    \end{aligned}
+\end{equation*}
+
+
+Для обоих образцов рассчитаем
+концентрацию $n$ носителей тока $n =
+1/(R_x e)$. Также вычислим удельную
+проводимость $\sigma$ материала образцов
+по формуле (8). По результатам
+рассчитаем подвижность $b$ носителей
+тока.
+
+
+
+\begin{table}[H]
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Металл & $n, (\text{м}^3)^{-1}$ 
+        & $\sigma, \
+        (\text{Ом}\cdot\text{м})^{-1}$ &
+        $b, \
+        \text{см}^2/(\text{B}\cdot\text{с})$ 
+        \\ \hline
+        Медь & $1,5 \pm 0,3 \cdot
+        10^{29}$ & $7,8\pm 0,5 \cdot
+        10^{7}$ & $33 \pm 7$ \\ \hline
+        Цинк & $6,0 \pm 0,1 \cdot 10^{29}$ & $1,1 \pm
+        0,1 \cdot 10^7$ &  $11,4 \pm 1,2$\\ \hline
+    \end{tabular}
+    \captionsetup{justification=centering}
+    \caption{Плотность заряда $n$,
+    электропроводность $\sigma$ и
+подвижность носителей тока $b$ для
+образца из меди и цинка}
 \end{table}
+
+\section{Обсуждение результатов и выводы}
+\renewcommand{\arraystretch}{1.1} 
+\renewcommand{\tabcolsep}{0.1cm} 
+Результаты занесены в таблицу.
+\begin{table}[H]
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        Металл & \begin{tabular}{c} $R_x$
+            \\ $10^{-10} \text{м}^3
+        /\text{Кл}$ \end{tabular} &
+        \begin{tabular}{c} Табл. $R_x$, \\
+            $10^{-10}\text{м}^3/\text{Кл}$
+        \end{tabular}
+            & \begin{tabular}{c} Знак\\
+            носит. \end{tabular} &
+            \begin{tabular}{c} $n$\\
+                $10^{29}(\text{м}^3)^{-1}$
+            \end{tabular} &
+                \begin{tabular}{c}
+                    $\sigma$, \\
+                    $10^{7}(\text{Ом}\cdot\text{м})^{-1}$
+                \end{tabular} &
+                \begin{tabular}{c}  $b$,
+                    \\
+                    $\text{см}^2/(\text{В}\cdot
+                \text{с})$
+            \end{tabular} \\ \hline
+            Медь & $-(0,42 \pm 0,08)$ &
+            $-0,53$ &  $-$ & $1,5 \pm
+            0,3$ &  $7,8 \pm 0,5$ &
+            $33\pm 7$ \\ \hline
+            Цинк & $1,07 \pm 0,06$ &
+            $1,04$ &  $+$ &  $6,0 \pm
+            0,1$ &  $1,1 \pm 0,1$ &
+            $11,4\pm 1,2$ \\ \hline
+        
+    \end{tabular}
+    \captionsetup{justification=centering}
+    \caption{Постоянная Холла $R_x$, плотность заряда $n$,
+    электропроводность $\sigma$ и
+подвижность носителей тока $b$ для
+образца из меди и цинка}
+\end{table}
+
 
 \end{document}
