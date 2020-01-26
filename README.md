@@ -19,3 +19,5 @@
 
 #### Извинения
 Прошу простить меня за орфографические ошибки и ошибки иного толка.
+
+![alt text](https://github.com/leonidka2001/latexlabs/blob/master/!Latex_certificate.pdf)
