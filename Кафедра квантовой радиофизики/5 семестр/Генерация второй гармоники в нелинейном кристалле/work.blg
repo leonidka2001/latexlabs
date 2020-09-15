@@ -1,0 +1,5 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is 'work.blg'
+[85] biber-darwin:322> INFO - === вт сен  8, 2020, 13:10:23
+[100] Biber.pm:415> INFO - Reading 'work.bcf'
+[203] Utils.pm:304> WARN - No data sources defined!
