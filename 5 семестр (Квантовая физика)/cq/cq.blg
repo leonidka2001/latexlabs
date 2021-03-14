@@ -1,0 +1,5 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is 'cq.blg'
+[108] biber-darwin:322> INFO - === вс янв 17, 2021, 13:16:09
+[127] Biber.pm:415> INFO - Reading 'cq.bcf'
+[219] Utils.pm:304> WARN - No data sources defined!
