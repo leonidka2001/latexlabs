@@ -1,0 +1,209 @@
+\RequirePackage{indentfirst}
+\RequirePackage{polyglossia}   %% загружает пакет многоязыковой вёрстки
+\setdefaultlanguage{russian}  %% устанавливает главный язык документа
+    %\setdefaultlanguage[babelshorthands=true]{russian}  %% вместо предыдущей строки; доступны команды из пакета babel для русского языка
+\setotherlanguage{english} %% объявляет второй язык документа
+%\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию. Для XeTeX опцию Renderer=Basic можно не указывать, она необходима для LuaTeX
+%\setmathfont[version=GPM]{TeX Gyre Pagella Math}
+\RequirePackage{amsmath,amsfonts,amsthm}
+\RequirePackage{mathtools}
+\RequirePackage{yfonts}
+\RequirePackage[warnings-off={mathtools-colon}]{unicode-math}
+%\DeclareMathVersion{my}
+%\newenvironment{example}{\mathversion{my}}{}
+\setmainfont{CMU Serif} %% задаёт основной шрифт документа
+%\setmainfont{Latin Modern Roman}
+\setsansfont{CMU Sans Serif}                    %% задаёт шрифт без засечек
+\setmonofont{CMU Typewriter Text}               %% задаёт моноширинный шрифт
+%\setmathfont{Latin Modern Math}[version=LMM]
+\setmathfont{latinmodern-math.otf}
+\setmathfont[range={\rightarrow,\leftarrow,\int,\vartriangle}]{XITS Math}
+\setmathfont[range={\mitlambda}]{STIX Two Math}
+\setmathfont[range={\sum,\lbraceuend,\lbracemid,\lbracelend,\lbrace,\rbrace,\lparen,\rparen,\lbrack,\rbrack,\hookrightarrow}]{TeX Gyre Pagella Math}
+%\setmathfont[range={\sum,\lbraceuend,\lbracemid,\lbracelend,\lbrace}]{TeX Gyre Pagella Math}
+%STIX Two Math
+%\setmainfont{TeX Gyre Pagella}
+%\setmathfont{TeX Gyre Pagella Math}
+%\setmathfont{STIX Two Math}
+%\setmathfont{XITS Math}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+\let\mathbb\relax % remove the definition by unicode-math
+\DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
+
+%\AtBeginDocument{%
+%  \Udelcode`(="4 `(
+%  \Udelcode`)="4 `)
+%}
+
+\DeclareFontFamily{U}{matha}{\hyphenchar\font45}
+\DeclareFontShape{U}{matha}{m}{n}{
+      <5> <6> <7> <8> <9> <10> gen * matha
+      <10.95> matha10 <12> <14.4> <17.28> <20.74> <24.88> matha12
+      %mathx10 <12> <14.4> <17.28> <20.74> <24.88>
+      }{}
+\DeclareSymbolFont{matha}{U}{matha}{m}{n}
+\DeclareMathSymbol{\myrightarrow}{3}{matha}{"D1}
+
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{
+      <5> <6> <7> <8> <9> <10> gen * mathx
+      <10.95> mathx10 <12> <14.4> <17.28> <20.74> <24.88> mathx12
+      %mathx10 <12> <14.4> <17.28> <20.74> <24.88>
+      }{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareMathSymbol{\myint}{1}{mathx}{"B3}
+%\DeclareMathSymbol{\ddots}{\mathpunct}{symbols}{"0B}
+
+\DeclareSymbolFont{cyrletters}{\encodingdefault}{\familydefault}{m}{}
+\newcommand{\makecyrmathletter}[1]{%
+  \begingroup\lccode`a=#1\lowercase{\endgroup
+  \Umathcode`a}="0 \csname symcyrletters\endcsname\space #1
+}
+\count255="409
+\loop\ifnum\count255<"44F
+  \advance\count255 by 1
+  \makecyrmathletter{\count255}
+\repeat
+
+
+
+%\RequirePackage[T2A]{fontenc}
+%\RequirePackage[utf8]{inputenc}
+%\RequirePackage[english,russian]{babel}
+
+%\RequirePackage{extsizes}
+\RequirePackage{geometry}
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+%\renewcommand{\sectionmark}[1]{\markboth{#1}{}} 
+\renewcommand{\headrulewidth}{0mm} % Если необходимо убрать линейку,
+% или изменить ее длину
+% \lfoot{} % Нижний левый
+% \rfoot{} % Нижний правый
+% \rhead{} % Верхний правый
+% \chead{} % Верхний в центре
+%\lhead{\thepage} % Номер страницы в левом верхнем углу
+\cfoot{\makebox[\textwidth][c]{\thepage}} % Оставить нижний колонтитул без цифры
+
+\RequirePackage{mathtext}
+\RequirePackage{cmap}
+\RequirePackage{graphicx}
+\graphicspath{{images/}} % Необходимо, если рисунки
+% находятся в другой папке
+\RequirePackage{wrapfig}
+\RequirePackage{floatrow}
+\RequirePackage{setspace}
+\RequirePackage[margin=10pt,font={small,stretch=0.9},labelfont=bf,labelsep=period,
+justification=centerlast]{caption}
+\RequirePackage{multirow}
+\RequirePackage{multicol}
+\RequirePackage{longtable}
+\RequirePackage{makecell}
+\RequirePackage{icomma}
+
+
+
+\RequirePackage{hyperref}
+%\RequirePackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
+\RequirePackage{xcolor}
+\hypersetup{				% Гиперссылки
+    unicode=true,           % русские буквы в раздела PDF
+    pdftitle={Заголовок},   % Заголовок
+    pdfauthor={Автор},      % Автор
+    pdfsubject={Тема},      % Тема
+    pdfcreator={Создатель}, % Создатель
+    pdfproducer={Производитель}, % Производитель
+    pdfkeywords={keyword1} {key2} {key3}, % Ключевые слова
+    colorlinks=true,       	% false: ссылки в рамках; true: цветные ссылки
+    linkcolor=black,          % внутренние ссылки
+    citecolor=black,        % на библиографию
+    filecolor=magenta,      % на файлы
+    urlcolor=blue           % на URL
+}
+\urlstyle{sf}
+
+
+
+
+
+\RequirePackage[math]{cellspace}
+\RequirePackage{array,tabularx,tabulary,booktabs}
+\RequirePackage{enumitem}
+%\setlist{noitemsep}%,leftmargin=*,topsep=0pt,label={}}
+%\setlist{labelindent=\parindent,leftmargin=*}
+%topsep=4pt,partopsep=2pt
+%after*={\mbox{}\vspace{-\baselineskip}},label={}
+\RequirePackage{mathrsfs}
+%\RequirePackage{mathabx}
+\DeclareMathSymbol{:}{7}{operators}{"3A} 
+\DeclareMathSymbol{\sint}{1}{largesymbols}{'122}
+%\DeclareMathSymbol{\cminfty}{\mathord}{symbols}{49}
+%\DeclareMathSymbol{\newpartial}{\mathord}{letters}{64}
+%
+
+
+\RequirePackage{soul}
+\RequirePackage{soulutf8}
+\DeclareSymbolFont{largesymbols}{OMX}{cmex}{m}{n}
+\DeclareMathSymbol{\intop}{\mathop}{largesymbols}{"52}
+\DeclareRobustCommand\sint{\intop\nolimits}
+
+
+\RequirePackage[e]{esvect}
+\RequirePackage{biblatex}
+%\DeclareLanguageMapping{russian}{russian-apa}
+%\DefineBibliographyStrings{russian}{%
+%	andothers = {et\addabbrvspace al\adddot}
+%}
+
+%%\renewcommand{\bfdefault}{b}
+%\DeclareFontEncoding{FML}{}{}%
+%\DeclareFontSubstitution{FML}{fncmi}{m}{it}%
+%\DeclareSymbolFont{fouriernc}{FML}{fncmi}{m}{it}%
+%\DeclareMathAccent{\fvec}{0}{fouriernc}{"7E}
+%\RequirePackage{bm}
+
+
+\RequirePackage[many]{tcolorbox}
+%\tcbuselibrary{skins}
+
+%
+%\renewcommand{\sfdefault}{cmss}
+%\renewcommand{\rmdefault}{cmr}
+%\renewcommand{\ttdefault}{cmt}
+%\AtBeginDocument{\renewcommand{\vec}{\fvec}}
+%\renewcommand{\partial}{\newpartial}
+%\renewcommand{\infty}{\cminfty}
+
+\AtBeginDocument{\renewcommand{\phi}{\varphi}}
+\AtBeginDocument{\renewcommand{\epsilon}{\varepsilon}}
+\AtBeginDocument{\renewcommand{\div}{\mathrm{div}}}
+\AtBeginDocument{\renewcommand{\rightarrow}{\myrightarrow}}
+\AtBeginDocument{\renewcommand{\int}{\myint}}
+\AtBeginDocument{\renewcommand{\le}{\leqslant}}
+\AtBeginDocument{\renewcommand{\ge}{\geqslant}}
+\AtBeginDocument{\renewcommand{\lambda}{\mitlambda}}
+\AtBeginDocument{\renewcommand{\Re}{\mathrm{Re}}}
+\AtBeginDocument{\def\ddots{\mathinner{\mkern1mu\raise7pt\vbox{\kern7pt\hbox{.}}\mkern2mu%
+\raise4pt\hbox{.}\mkern2mu\raise1pt\hbox{.}\mkern1mu}}}
+%\AtBeginDocument{\def\hslash{{\mathchar'26\mkern-9mu h}}}
+%\AtBeginDocument{\matchchardef\colon="603A}
+
+\delimiterfactor=1000
+
+\newcommand{\rot}{\mathrm{rot}}
+\newcommand{\sinc}{\mathrm{sinc}}
+\newcommand{\grad}{\mathrm{grad}}
+\newcommand{\Alt}{\mathrm{Alt}}
+\newcommand{\sign}[1]{\mathrm{sign}(#1)}
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+{\hbox{$\mathsurround=0pt#1$}}{}}
+
+\newcommand{\fig}[1]{%
+\textsl{рис.~\ref{#1}}%
+}
+
+\newcommand{\ffig}[1]{%
+\textsl{(рис.~\ref{#1})}%
+}
